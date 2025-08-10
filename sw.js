@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'wordbuddy-v1';
+const CACHE_NAME = 'wordbuddy-v2';
 const ASSETS = [
   './',
   './index.html',
