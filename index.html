@@ -1,6 +1,8 @@
 <!DOCTYPE html><html lang="ar" dir="rtl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Word Buddy — الحفظ الذكي</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0b1220">
+<title>Word Buddy — الحفظ الذكي</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
 <style>
   :root{--bg:#0b1220;--card:#121a2a;--ink:#e9eefc;--muted:#93a0b4;--accent:#4f8cff;--good:#11c46a;--bad:#f05252}
   *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans Arabic','Noto Sans',Arial;background:linear-gradient(180deg,#0b1220,#0e1627);color:var(--ink)}
@@ -34,8 +36,8 @@
   </div>
 
   <section id="nofile" class="card">
-    <div class="warn">⚠️ لا يوجد ملف <code>data.json</code>. ارفع ملفك بجانب <code>index.html</code>.</div>
-    <div class="muted" style="margin-top:6px">صيغة كل عنصر: {"word": "...", "meaning": "...", "example": "", "level": "Units X"}</div>
+    <div class="warn">⚠️ لا يوجد ملف <code>data_with_hints.json</code> أو <code>data.json</code>. ارفع أحدهما بجانب <code>index.html</code>.</div>
+    <div class="muted" style="margin-top:6px">العناصر: {"word": "...", "meaning": "...", "example": "", "level": "Units X", "hint": "abc"}</div>
   </section>
 
   <section id="flash" class="card hidden">
@@ -78,10 +80,15 @@
 const byId=id=>document.getElementById(id); const shuffle=a=>a.sort(()=>Math.random()-0.5); function sample(a,n){return shuffle(a.slice()).slice(0,n);}
 function speak(t){ if(!window.speechSynthesis) return; const u=new SpeechSynthesisUtterance(t); const v=speechSynthesis.getVoices().find(v=>/en-/i.test(v.lang)); if(v) u.voice=v; speechSynthesis.speak(u); }
 
+// Load data_with_hints.json then fallback to data.json
 let RAW_DATA=[];
-fetch('data.json').then(r=>{ if(!r.ok) throw new Error('no data'); return r.json(); })
-.then(d=>{RAW_DATA=d; byId('nofile').classList.add('hidden'); init();})
-.catch(()=>{ byId('nofile').classList.remove('hidden'); });
+fetch('data_with_hints.json').then(r=>{ if(!r.ok) throw 0; return r.json(); })
+.then(d=>{ RAW_DATA=d; byId('nofile').classList.add('hidden'); init(); })
+.catch(()=>{
+  fetch('data.json').then(r=>{ if(!r.ok) throw 0; return r.json(); })
+  .then(d=>{ RAW_DATA=d; byId('nofile').classList.add('hidden'); init(); })
+  .catch(()=> byId('nofile').classList.remove('hidden'));
+});
 
 const key='wordbuddy_progress_v1'; const state=JSON.parse(localStorage.getItem(key)||'{}'); const now=()=>new Date().toISOString();
 function ensureState(r){ if(!state[r.word]) state[r.word]={srs:0,known:false,starred:false,due:now(),tries:0}; return state[r.word]; }
@@ -89,7 +96,7 @@ function save(){ localStorage.setItem(key, JSON.stringify(state)); refreshStats(
 
 const DATA=[];
 function rebuildData(){
-  const ds = RAW_DATA.map((r,i)=>({id:i,word:String(r.word||'').trim(),meaning:String(r.meaning||'').trim(),example:String(r.example||'').trim(),level:String(r.level||'').trim()})).filter(r=>r.word);
+  const ds = RAW_DATA.map((r,i)=>({id:i,word:String(r.word||'').trim(),meaning:String(r.meaning||'').trim(),example:String(r.example||'').trim(),level:String(r.level||'').trim(),hint:(r.hint?String(r.hint):'')})).filter(r=>r.word);
   DATA.length=0; ds.forEach(x=>DATA.push(x));
   const sel=byId('levelFilter'); sel.innerHTML=''; const o=document.createElement('option'); o.value=''; o.textContent='كل الوحدات'; sel.appendChild(o);
   [...new Set(DATA.map(d=>d.level).filter(Boolean))].forEach(l=>{ const x=document.createElement('option'); x.value=l; x.textContent=l; sel.appendChild(x); });
@@ -121,7 +128,7 @@ function setFlash(r){ byId('flashWord').textContent = byId('reverse').checked ? 
 function nextFlash(){ if(pool.length===0) pool=shuffle(currentPool()); const r=pool[flashIdx%pool.length]; flashIdx++; setFlash(r); return r; }
 function flashInit(){ pool=shuffle(currentPool()); currentRec=nextFlash(); }
 
-// MCQ (reveal after 2 wrong)
+// MCQ (reveal after 2 wrong, auto-progress on correct)
 function setupMCQ(){
   const s=sample(currentPool(),4); if(s.length<4) return;
   const answer=s[0];
@@ -136,26 +143,26 @@ function setupMCQ(){
   });
 }
 
-// Type (hint + reveal)
+// Type (hint from dataset + reveal; auto-progress on correct)
 let typeRec=null;
 function setupType(){ const s=currentPool(); if(!s.length) return; typeRec=s[Math.floor(Math.random()*s.length)]; byId('typePrompt').textContent = byId('reverse').checked ? (typeRec.meaning||'—') : typeRec.meaning || '—'; byId('typeInput').value=''; byId('typeFeedback').textContent=''; ensureState(typeRec).tries=0; }
 byId('typeInput').addEventListener('keydown', e=>{
   if(e.key==='Enter'){ const st=ensureState(typeRec); const val=e.target.value.trim().toLowerCase(); const ans=(byId('reverse').checked?typeRec.meaning:typeRec.word).toLowerCase();
     if(val===ans){ byId('typeFeedback').textContent='ممتاز ✅'; markResult(typeRec,'easy'); setupType(); }
-    else{ st.tries=(st.tries||0)+1; if(st.tries===1){ const n=Math.max(2,Math.ceil(ans.length*0.3)); byId('typeFeedback').textContent='تلميح: '+ans.slice(0,n)+'…'; }
+    else{ st.tries=(st.tries||0)+1; if(st.tries===1){ const hint = (typeRec.hint && typeRec.hint.trim()) ? typeRec.hint : ans.slice(0, Math.max(2, Math.ceil(ans.length*0.3))); byId('typeFeedback').textContent='تلميح: '+hint+'…'; }
           else { byId('typeFeedback').textContent='الإجابة: '+(byId('reverse').checked?typeRec.meaning:typeRec.word); markResult(typeRec,'hard'); setTimeout(setupType,800); } }
   }
 });
 
-// Listen
+// Listen (auto-progress on correct)
 let listenRec=null;
 function setupListen(){ const s=currentPool(); if(!s.length) return; listenRec=s[Math.floor(Math.random()*s.length)]; byId('listenInput').value=''; byId('listenFeedback').textContent=''; }
 byId('listenPlay').onclick=()=>{ if(listenRec) speak(listenRec.word); };
 byId('listenInput').addEventListener('keydown', e=>{ if(e.key==='Enter'){ const val=e.target.value.trim().toLowerCase(); const ans=listenRec.word.toLowerCase(); if(val===ans){ byId('listenFeedback').textContent='صحيح ✅'; markResult(listenRec,'easy'); setupListen(); } else { byId('listenFeedback').textContent='ليست دقيقة'; markResult(listenRec,'hard'); } } });
 
 // Review
-function renderReview(){ const due=currentPool().filter(r=> new Date(ensureState(r).due)<=new Date()); const box=byId('reviewList'); box.innerHTML=''; if(!due.length){ box.textContent='لا يوجد مراجعة الآن'; return;} due.slice(0,60).forEach(r=>{ ensureState(r); const div=document.createElement('div'); div.className='card'; div.innerHTML=`<div style="font-weight:700">${r.word}</div><div class="muted" style="margin-top:6px">${r.meaning||'—'}</div><div style="margin-top:6px" class="pill">${r.level||''}</div><div class="row" style="margin-top:8px"><button class="btn" data-e="hard">أعد</button><button class="btn" data-e="easy">سهل</button></div>`; div.querySelectorAll('button').forEach(b=>b.onclick=()=>{markResult(r,b.dataset.e); renderReview();}); box.appendChild(div); }); }
-
+function renderReview(){ const due=currentPool().filter(r=> new Date(ensureState(r).due)<=new Date()); const box=byId('reviewList'); box.innerHTML=''; if(!due.length){ box.textContent='لا يوجد مراجعة الآن'; return;} due.slice(0,60).forEach(r=>{ ensureState(r); const div=document.createElement('div'); div.className='card'; div.innerHTML=`<div style="font-weight:700">${r.word}</div><div class="muted" style="margin-top:6px">${r.meaning||'—'}</div><div style="margin-top:6px" class="pill">${r.level||''}</div>`; box.appendChild(div); }); }
+  
 // Mode switch
 const sections=['flash','mcq','type','listen','review'].map(id=>byId(id));
 function setMode(m){ sections.forEach(s=>s.classList.add('hidden')); byId(m).classList.remove('hidden'); if(m==='mcq')setupMCQ(); if(m==='type')setupType(); if(m==='listen')setupListen(); if(m==='review')renderReview(); }
