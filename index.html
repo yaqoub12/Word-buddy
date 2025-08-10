@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Buddy — الحفظ الذكي</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<style>
+  :root{--bg:#0b1220;--card:#121a2a;--ink:#e9eefc;--muted:#93a0b4;--accent:#4f8cff;--good:#11c46a;--warn:#ffb020;--bad:#f05252}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans Arabic','Noto Sans',Arial;background:linear-gradient(180deg,#0b1220,#0e1627);color:var(--ink)}
+  header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(180%) blur(12px);background:rgba(11,18,32,.7);border-bottom:1px solid #24304a}
+  .wrap{max-width:1100px;margin:0 auto;padding:16px}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .grow{flex:1 1 auto}
+  .card{background:var(--card);border:1px solid #22304a;border-radius:16px;padding:18px;box-shadow:0 8px 40px rgba(0,0,0,.25)}
+  .toolbar button,.toolbar select,.toolbar input[type="search"]{background:#0e1729;color:var(--ink);border:1px solid #2a3b5e;border-radius:12px;padding:10px 12px;font-size:14px}
+  .pill{padding:6px 10px;border-radius:999px;background:#0f1a2f;border:1px solid #2a3b5e;color:var(--muted);font-size:12px;margin-inline-end:6px}
+  .hidden{display:none}
+  .center{text-align:center}
+  .big{font-size:40px;font-weight:800;letter-spacing:.3px}
+  .muted{color:var(--muted)}
+  .actions button{margin:8px 6px 0 0}
+  .btn{padding:10px 14px;border-radius:12px;border:1px solid #2a3b5e;background:#0e1729;color:var(--ink);cursor:pointer}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .grid{display:grid;gap:14px}
+  .grid.cards{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .badge{font-size:12px;color:#c5d1e6;background:#0f1a2f;border:1px solid #2a3b5e;padding:4px 8px;border-radius:14px}
+  .progress{height:10px;background:#11203d;border-radius:999px;overflow:hidden;border:1px solid #2a3b5e}
+  .progress>div{height:100%;background:linear-gradient(90deg,var(--good),#58d6a7);width:0}
+  .star{cursor:pointer;font-size:18px}
+  .qarea input[type="text"]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a3b5e;background:#0e1729;color:var(--ink);font-size:16px}
+  .choice{border:1px solid #2a3b5e;padding:10px 12px;border-radius:12px;cursor:pointer}
+  .choice.correct{border-color:var(--good)} .choice.wrong{border-color:var(--bad)}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid #2a3b5e;background:#0e1729;color:#cfe0ff;font-size:12px}
+  .chip input{margin:0}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap row toolbar">
+    <strong id="appTitle">ورد بَدي — الحفظ الذكي</strong>
+    <div class="grow"></div>
+    <select id="mode">
+      <option value="flash">بطاقات</option>
+      <option value="mcq">اختيار من متعدد</option>
+      <option value="type">اكتب الكلمة</option>
+      <option value="listen">استمع واكتب</option>
+      <option value="review">مراجعة مكرّرة</option>
+    </select>
+    <select id="levelFilter"><option value="">كل الوحدات</option></select>
+    <label class="chip"><input type="checkbox" id="reverse"> عكس العرض</label>
+    <input id="search" type="search" placeholder="ابحث..." />
+    <button id="langBtn" class="btn">English</button>
+    <button id="installBtn" class="btn">تثبيت</button>
+    <button id="resetBtn" class="btn">تصفير التقدّم</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="stats" class="card row" style="align-items:center">
+    <div class="grow">
+      <div class="muted" data-i18n="progress">التقدّم</div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div style="margin-top:6px"><span id="knownCount">0</span>/<span id="totalCount">0</span> <span data-i18n="mastered">متقنة</span></div>
+    </div>
+    <div><span id="todayDue" class="badge">0 <span data-i18n="dueToday">مستحق اليوم</span></span></div>
+  </div>
+
+  <section id="flash" class="card center">
+    <div id="flashCard">
+      <div id="flashWord" class="big">—</div>
+      <div id="flashMeaning" class="muted" style="margin-top:8px">—</div>
+      <div id="flashExample" class="muted" style="margin-top:8px"></div>
+      <div style="margin-top:12px">
+        <span id="flashLevel" class="pill"></span>
+        <span id="star" class="star" title="Favorite">☆</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="speakBtn" title="Speak">🔊 <span data-i18n="speak">نُطق</span></button>
+      <button class="btn" id="showBtn" data-i18n="show">إظهار</button>
+      <button class="btn" id="easyBtn" data-i18n="easy">سهل ✅</button>
+      <button class="btn" id="hardBtn" data-i18n="hard">صعب ❗</button>
+      <button class="btn primary" id="nextBtn" data-i18n="next">التالي ▶</button>
+    </div>
+  </section>
+
+  <section id="mcq" class="card hidden">
+    <div class="qarea">
+      <div class="muted" id="mcqPrompt">اختر المعنى الصحيح</div>
+      <div class="big" id="mcqStem">—</div>
+      <div class="grid cards" id="mcqChoices"></div>
+    </div>
+  </section>
+
+  <section id="type" class="card hidden">
+    <div class="qarea">
+      <div class="muted" data-i18n="typePromptLabel">اكتب الكلمة الصحيحة</div>
+      <div id="typePrompt" class="big">—</div>
+      <input id="typeInput" type="text" placeholder="اكتب هنا..." autocomplete="off"/>
+      <div id="typeFeedback" style="margin-top:8px"></div>
+    </div>
+  </section>
+
+  <section id="listen" class="card hidden">
+    <div class="qarea">
+      <div class="muted" data-i18n="listenLabel">استمع واكتب الكلمة</div>
+      <div><button class="btn" id="listenPlay">🔊 <span data-i18n="play">تشغيل</span></button></div>
+      <input id="listenInput" type="text" placeholder="اكتب ما سمعت..." autocomplete="off"/>
+      <div id="listenFeedback" style="margin-top:8px"></div>
+    </div>
+  </section>
+
+  <section id="review" class="card hidden">
+    <div class="muted" data-i18n="reviewHeader">كلمات للمراجعة</div>
+    <div id="reviewList" class="grid cards"></div>
+  </section>
+
+  <div class="muted" style="text-align:center;padding:18px" data-i18n="footer">يحفظ التقدّم داخل المتصفح. يعمل دون إنترنت بعد التثبيت.</div>
+</main>
+
+<script>
+  // Language strings
+  const STR = {
+    ar: {
+      title: 'ورد بَدي — الحفظ الذكي',
+      progress: 'التقدّم',
+      mastered: 'متقنة',
+      dueToday: 'مستحق اليوم',
+      speak: 'نُطق',
+      show: 'إظهار',
+      easy: 'سهل ✅',
+      hard: 'صعب ❗',
+      next: 'التالي ▶',
+      pickWord: 'اختر الكلمة الصحيحة',
+      pickMeaning: 'اختر المعنى الصحيح',
+      typePromptLabel: 'اكتب الكلمة الصحيحة',
+      listenLabel: 'استمع واكتب الكلمة',
+      play: 'تشغيل',
+      reviewHeader: 'كلمات للمراجعة',
+      footer: 'يحفظ التقدّم داخل المتصفح. يعمل دون إنترنت بعد التثبيت.',
+      allLevels: 'كل الوحدات',
+      reverse: 'عكس العرض',
+      install: 'تثبيت',
+      reset: 'تصفير التقدّم',
+      search: 'ابحث...',
+      flash: 'بطاقات', mcq: 'اختيار من متعدد', type: 'اكتب الكلمة', listen: 'استمع واكتب', review: 'مراجعة مكرّرة'
+    },
+    en: {
+      title: 'Word Buddy — Interactive Memorizer',
+      progress: 'Progress',
+      mastered: 'mastered',
+      dueToday: 'due today',
+      speak: 'Speak',
+      show: 'Show',
+      easy: 'Easy ✅',
+      hard: 'Hard ❗',
+      next: 'Next ▶',
+      pickWord: 'Pick the correct word',
+      pickMeaning: 'Pick the correct meaning',
+      typePromptLabel: 'Type the correct word',
+      listenLabel: 'Listen and type the word',
+      play: 'Play',
+      reviewHeader: 'Words due for review',
+      footer: 'Progress is saved locally. Works offline after install.',
+      allLevels: 'All levels',
+      reverse: 'Reverse',
+      install: 'Install',
+      reset: 'Reset Progress',
+      search: 'Search...',
+      flash: 'Flashcards', mcq: 'Multiple Choice', type: 'Type the Word', listen: 'Listen & Type', review: 'Spaced Review'
+    }
+  };
+  let lang = localStorage.getItem('wb_lang') || 'ar';
+
+  // Dataset
+  let RAW_DATA = [];
+  fetch('data.json').then(r=>r.json()).then(d=>{ RAW_DATA = d; init(); });
+
+  // Utilities
+  const byId = id=>document.getElementById(id);
+  const shuffle = arr => arr.sort(()=> Math.random()-0.5);
+  function sample(arr,n){ return shuffle(arr.slice()).slice(0,n); }
+  function speak(text){
+    if (!window.speechSynthesis) return alert('Speech not supported.');
+    const u = new SpeechSynthesisUtterance(text);
+    const voices = speechSynthesis.getVoices();
+    const en = voices.find(v=>/en-/i.test(v.lang));
+    if (en) u.voice = en;
+    speechSynthesis.speak(u);
+  }
+
+  // State
+  const key = 'wordbuddy_progress_v1';
+  const state = JSON.parse(localStorage.getItem(key) || '{}');
+  const now = ()=> new Date().toISOString();
+  function ensureState(rec){
+    if(!state[rec.word]) state[rec.word] = { srs:0, known:false, starred:false, due: now() };
+    return state[rec.word];
+  }
+  function save(){ localStorage.setItem(key, JSON.stringify(state)); refreshStats(); }
+
+  // i18n + RTL
+  function applyLang(){
+    const t = STR[lang];
+    document.title = t.title;
+    byId('appTitle').textContent = t.title;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang==='ar') ? 'rtl' : 'ltr';
+    // controls
+    byId('langBtn').textContent = (lang==='ar') ? 'English' : 'العربية';
+    byId('resetBtn').textContent = t.reset;
+    byId('installBtn').textContent = t.install;
+    byId('search').placeholder = t.search;
+    // mode select options
+    const modeSel = byId('mode');
+    modeSel.options[0].text = t.flash;
+    modeSel.options[1].text = t.mcq;
+    modeSel.options[2].text = t.type;
+    modeSel.options[3].text = t.listen;
+    modeSel.options[4].text = t.review;
+    // static labels
+    document.querySelectorAll('[data-i18n=progress]').forEach(n=>n.textContent=t.progress);
+    document.querySelectorAll('[data-i18n=mastered]').forEach(n=>n.textContent=t.mastered);
+    document.querySelectorAll('[data-i18n=dueToday]').forEach(n=>n.textContent=t.dueToday);
+    document.querySelectorAll('[data-i18n=speak]').forEach(n=>n.textContent=t.speak);
+    byId('showBtn').textContent = t.show;
+    byId('easyBtn').textContent = t.easy;
+    byId('hardBtn').textContent = t.hard;
+    byId('nextBtn').textContent = t.next;
+    byId('mcqPrompt').textContent = (byId('reverse').checked ? t.pickWord : t.pickMeaning);
+    document.querySelectorAll('[data-i18n=typePromptLabel]').forEach(n=>n.textContent=t.typePromptLabel);
+    document.querySelectorAll('[data-i18n=listenLabel]').forEach(n=>n.textContent=t.listenLabel);
+    document.querySelectorAll('[data-i18n=play]').forEach(n=>n.textContent=t.play);
+    document.querySelectorAll('[data-i18n=reviewHeader]').forEach(n=>n.textContent=t.reviewHeader);
+    document.querySelectorAll('[data-i18n=footer]').forEach(n=>n.textContent=t.footer);
+    // level filter default
+    byId('levelFilter').options[0].text = t.allLevels;
+    // reverse label
+    document.querySelector('label[for=reverse]')?.lastChild;
+  }
+
+  function setLang(newLang){
+    lang = newLang; localStorage.setItem('wb_lang', lang); applyLang();
+  }
+
+  // Build data
+  const DATA = [];
+  function rebuildData(){
+    const newData = RAW_DATA.map((r,i)=> ({
+      id:i,
+      word:String(r.word||'').trim(),
+      meaning:String(r.meaning||'').trim(),
+      example:String(r.example||'').trim(),
+      level:String(r.level||'').trim()
+    })).filter(r=>r.word);
+    DATA.length = 0; newData.forEach(x=>DATA.push(x));
+    // refill levels
+    const levelSel = byId('levelFilter');
+    const val = levelSel.value;
+    levelSel.innerHTML = '';
+    const opt0 = document.createElement('option');
+    opt0.value=''; opt0.textContent = STR[lang].allLevels; levelSel.appendChild(opt0);
+    [...new Set(DATA.map(d=>d.level).filter(Boolean))].forEach(l=>{
+      const o=document.createElement('option'); o.value=l; o.textContent=l; levelSel.appendChild(o);
+    });
+    levelSel.value = val || '';
+  }
+
+  function currentPool(){
+    const q = byId('search').value.toLowerCase();
+    const lvl = byId('levelFilter').value;
+    return DATA.filter(d=> (!lvl || d.level===lvl) && (!q || d.word.toLowerCase().includes(q) || d.meaning.toLowerCase().includes(q)));
+  }
+
+  // Stats
+  function refreshStats(){
+    const total = DATA.length;
+    const known = DATA.filter(d => (state[d.word]?.known)).length;
+    byId('totalCount').textContent = total;
+    byId('knownCount').textContent = known;
+    const pct = total ? (known/total)*100 : 0;
+    byId('progressBar').style.width = pct + '%';
+    const due = DATA.filter(d => new Date(state[d.word]?.due || 0) <= new Date()).length;
+    byId('todayDue').innerHTML = due + ' ' + STR[lang].dueToday;
+  }
+
+  // SRS
+  function markResult(rec, ease){
+    const st = ensureState(rec);
+    if (ease==='easy') st.srs = Math.min(5, st.srs+1);
+    if (ease==='hard') st.srs = Math.max(0, st.srs-1);
+    st.known = st.srs >= 3;
+    const days = [0,1,3,7,14,30][st.srs];
+    const next=new Date(); next.setDate(next.getDate()+days);
+    st.due = next.toISOString(); save();
+  }
+
+  // Modes
+  let flashIdx=0; let pool= [];
+  function setFlash(rec){
+    byId('flashWord').textContent = byId('reverse').checked ? (rec.meaning||'—') : rec.word;
+    byId('flashMeaning').textContent = byId('reverse').checked ? rec.word : (rec.meaning||'—');
+    byId('flashExample').textContent = rec.example ? '“'+rec.example+'”' : '';
+    byId('flashLevel').textContent = rec.level || '';
+    ensureState(rec);
+    byId('star').textContent = state[rec.word].starred ? '★' : '☆';
+    byId('flashMeaning').style.filter = 'blur(6px)';
+  }
+  function nextFlash(){
+    if (pool.length===0) pool = shuffle(currentPool());
+    const rec = pool[flashIdx % pool.length];
+    flashIdx++; setFlash(rec); return rec;
+  }
+  let currentRec=null;
+  function flashInit(){ pool = shuffle(currentPool()); currentRec = nextFlash(); }
+
+  // MCQ/Type/Listen
+  function setupMCQ(){
+    const s = sample(currentPool(), 4);
+    if (s.length<4) return;
+    const t = STR[lang];
+    const answer = s[0];
+    byId('mcqStem').textContent = byId('reverse').checked ? (answer.meaning||'—') : answer.word;
+    byId('mcqPrompt').textContent = byId('reverse').checked ? t.pickWord : t.pickMeaning;
+    const choices = shuffle(s.map(r=> ({ rec:r, label: byId('reverse').checked ? r.word : (r.meaning||'—') })));
+    const area = byId('mcqChoices'); area.innerHTML='';
+    choices.forEach(c=>{
+      const div = document.createElement('div'); div.className='choice'; div.textContent=c.label;
+      div.onclick = ()=>{
+        if (c.rec===answer) { div.classList.add('correct'); markResult(answer,'easy'); setTimeout(setupMCQ, 600); }
+        else { div.classList.add('wrong'); markResult(answer,'hard'); }
+      };
+      area.appendChild(div);
+    });
+  }
+
+  let typeRec=null;
+  function setupType(){
+    const s = currentPool(); if (!s.length) return;
+    typeRec = s[Math.floor(Math.random()*s.length)];
+    byId('typePrompt').textContent = byId('reverse').checked ? (typeRec.meaning||'—') : typeRec.meaning || '—';
+    byId('typeInput').value=''; byId('typeFeedback').textContent=''; byId('typeInput').focus();
+  }
+  byId('typeInput').addEventListener('keydown', e=>{
+    if (e.key==='Enter'){
+      const val = e.target.value.trim().toLowerCase();
+      const ans = (byId('reverse').checked ? typeRec.meaning : typeRec.word).toLowerCase();
+      if (val===ans){ byId('typeFeedback').textContent = (lang==='ar'?'ممتاز ✅':'Great ✅'); markResult(typeRec,'easy'); setupType(); }
+      else { byId('typeFeedback').textContent = (lang==='ar'?'حاول مرة أخرى':'Try again'); markResult(typeRec,'hard'); }
+    }
+  });
+
+  let listenRec=null;
+  function setupListen(){
+    const s = currentPool(); if (!s.length) return;
+    listenRec = s[Math.floor(Math.random()*s.length)];
+    byId('listenInput').value=''; byId('listenFeedback').textContent='';
+  }
+  byId('listenPlay').onclick = ()=>{ if(listenRec) speak(listenRec.word); };
+  byId('listenInput').addEventListener('keydown', e=>{
+    if (e.key==='Enter'){
+      const val = e.target.value.trim().toLowerCase();
+      const ans = listenRec.word.toLowerCase();
+      if (val===ans){ byId('listenFeedback').textContent = (lang==='ar'?'صحيح ✅':'Correct ✅'); markResult(listenRec,'easy'); setupListen(); }
+      else { byId('listenFeedback').textContent = (lang==='ar'?'ليست دقيقة':'Not quite'); markResult(listenRec,'hard'); }
+    }
+  });
+
+  // Review list
+  function renderReview(){
+    const due = currentPool().filter(r=> new Date(ensureState(r).due) <= new Date());
+    const box = byId('reviewList'); box.innerHTML='';
+    if (!due.length){ box.innerHTML = '<div class=\"muted\">'+(lang==='ar'?'لا يوجد مراجعة الآن':'Nothing due now')+'</div>'; return; }
+    due.slice(0,60).forEach(rec=>{
+      ensureState(rec);
+      const card = document.createElement('div'); card.className='card';
+      card.innerHTML = `<div style="font-weight:700;font-size:18px">${rec.word}</div>
+                        <div class="muted" style="margin-top:6px">${rec.meaning || '—'}</div>
+                        <div style="margin-top:8px"><span class="badge">${rec.level || ''}</span></div>
+                        <div class="actions">
+                          <button class="btn" data-ease="hard">${lang==='ar'?'أعد':'Again'}</button>
+                          <button class="btn primary" data-ease="easy">${lang==='ar'?'سهل':'Easy'}</button>
+                        </div>`;
+      card.querySelectorAll('button').forEach(b=> b.onclick = ()=>{ markResult(rec, b.dataset.ease); renderReview(); });
+      box.appendChild(card);
+    });
+  }
+
+  // Mode switch
+  const sections = ['flash','mcq','type','listen','review'].map(id=>byId(id));
+  function setMode(m){
+    sections.forEach(s=> s.classList.add('hidden'));
+    byId(m).classList.remove('hidden');
+    if (m==='mcq') setupMCQ();
+    if (m==='type') setupType();
+    if (m==='listen') setupListen();
+    if (m==='review') renderReview();
+  }
+
+  // Install prompt (PWA)
+  let deferredPrompt=null;
+  window.addEventListener('beforeinstallprompt', (e)=>{ e.preventDefault(); deferredPrompt=e; byId('installBtn').disabled=false; });
+  byId('installBtn').onclick = async ()=>{
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt=null;
+  };
+
+  // Event bindings
+  function bind(){
+    byId('langBtn').onclick = ()=> setLang(lang==='ar'?'en':'ar');
+    byId('resetBtn').onclick = ()=>{ localStorage.removeItem(key); location.reload(); };
+    byId('search').addEventListener('input', ()=>{ if (byId('mode').value==='review') renderReview(); });
+    byId('mode').addEventListener('change', e=> setMode(e.target.value));
+    byId('levelFilter').addEventListener('change', ()=>{ flashInit(); if(byId('mode').value==='mcq') setupMCQ(); if(byId('mode').value==='review') renderReview(); });
+    byId('reverse').addEventListener('change', ()=>{ flashInit(); if(byId('mode').value==='mcq') setupMCQ(); if(byId('mode').value==='type') setupType(); });
+    byId('showBtn').onclick = ()=>{ byId('flashMeaning').style.filter='none'; };
+    byId('nextBtn').onclick = ()=>{ currentRec = nextFlash(); };
+    byId('easyBtn').onclick = ()=>{ if(currentRec) markResult(currentRec,'easy'); currentRec = nextFlash(); };
+    byId('hardBtn').onclick = ()=>{ if(currentRec) markResult(currentRec,'hard'); currentRec = nextFlash(); };
+    byId('speakBtn').onclick = ()=>{ if(currentRec) speak(byId('reverse').checked ? currentRec.meaning : currentRec.word); };
+    byId('star').onclick = ()=>{ const st=ensureState(currentRec); st.starred=!st.starred; byId('star').textContent = st.starred ? '★' : '☆'; save(); };
+  }
+
+  // Init
+  function init(){
+    rebuildData();
+    applyLang();
+    bind();
+    refreshStats();
+    setMode('flash');
+    flashInit();
+    // Register SW
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+  }
+</script>
+</body>
+</html>
