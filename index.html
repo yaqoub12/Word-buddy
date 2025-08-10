@@ -12,14 +12,22 @@
   select,input,button{background:#0e1729;color:var(--ink);border:1px solid #2a3b5e;border-radius:10px;padding:10px 12px}
   .big{font-size:36px;font-weight:800}.muted{color:var(--muted)}.pill{border:1px solid #2a3b5e;border-radius:999px;padding:4px 8px}
   .progress{height:10px;background:#11203d;border:1px solid #2a3b5e;border-radius:999px;overflow:hidden}.progress>div{height:10px;background:linear-gradient(90deg,var(--good),#58d6a7);width:0}
-  .choice{border:1px solid #2a3b5e;border-radius:12px;padding:10px;cursor:pointer}.choice.correct{border-color:#11c46a}.choice.wrong{border-color:#f05252}
+  .choice{border:1px solid #2a3b5e;border-radius:12px;padding:10px;cursor:pointer}.choice.correct{border-color:var(--good)}.choice.wrong{border-color:var(--bad)}
   .hidden{display:none}
   .warn{color:#ffb020}
+  .mask{letter-spacing:.2em;font-family:monospace;font-size:34px}
 </style></head><body>
 <div class="wrap">
   <div class="row card">
     <strong>ورد بَدي — الحفظ الذكي</strong><div style="flex:1"></div>
-    <select id="mode"><option value="flash">بطاقات</option><option value="mcq">اختيار من متعدد</option><option value="type">اكتب الكلمة</option><option value="listen">استمع واكتب</option><option value="review">مراجعة مكرّرة</option></select>
+    <select id="mode">
+      <option value="flash">بطاقات</option>
+      <option value="mcq">اختيار من متعدد</option>
+      <option value="type">اكتب الكلمة</option>
+      <option value="fill">أكمل الكلمة</option>
+      <option value="listen">استمع واكتب</option>
+      <option value="review">مراجعة مكرّرة</option>
+    </select>
     <select id="levelFilter"><option value="">كل الوحدات</option></select>
     <label><input type="checkbox" id="reverse"> عكس العرض</label>
     <button id="installBtn">تثبيت</button>
@@ -61,6 +69,14 @@
     <div class="big" id="typePrompt">—</div>
     <input id="typeInput" placeholder="اكتب هنا..." autocomplete="off">
     <div id="typeFeedback" style="margin-top:6px"></div>
+  </section>
+
+  <section id="fill" class="card hidden">
+    <div class="muted">أكمل الكلمة</div>
+    <div id="fillMasked" class="mask">_ _ _ _</div>
+    <div class="muted" id="fillMeaning" style="margin-top:6px">—</div>
+    <input id="fillInput" placeholder="اكتب الكلمة كاملة..." autocomplete="off">
+    <div id="fillFeedback" style="margin-top:6px"></div>
   </section>
 
   <section id="listen" class="card hidden">
@@ -154,6 +170,53 @@ byId('typeInput').addEventListener('keydown', e=>{
   }
 });
 
+// FILL (underscores with at least one letter pre-filled)
+let fillRec=null;
+function makeMask(word, fixed=null){
+  const letters = word.split('');
+  const idxs = letters.map((_,i)=>i);
+  if (fixed===null){
+    fixed = idxs[Math.floor(Math.random()*idxs.length)];
+  }
+  return letters.map((ch,i)=> i===fixed ? ch : (ch===' ' ? ' ' : '_')).join(' ');
+}
+function setupFill(){
+  const s=currentPool(); if(!s.length) return;
+  fillRec = s[Math.floor(Math.random()*s.length)];
+  ensureState(fillRec).tries=0;
+  const ans = fillRec.word;
+  const hint = (fillRec.hint && fillRec.hint.trim()) ? fillRec.hint.trim() : '';
+  let fixedIndex = null;
+  if (hint){
+    // try to reveal one of the hint letters if present
+    const pos = ans.toLowerCase().indexOf(hint.toLowerCase());
+    if (pos>=0) fixedIndex = pos; // first letter of hint
+  }
+  byId('fillMasked').textContent = makeMask(ans, fixedIndex);
+  byId('fillMeaning').textContent = fillRec.meaning || '—';
+  byId('fillInput').value=''; byId('fillFeedback').textContent='';
+}
+byId('fillInput').addEventListener('keydown', e=>{
+  if(e.key==='Enter'){
+    const st=ensureState(fillRec);
+    const val=e.target.value.trim().toLowerCase();
+    const ans=fillRec.word.toLowerCase();
+    if(val===ans){
+      byId('fillFeedback').textContent='ممتاز ✅';
+      markResult(fillRec,'easy'); setupFill();
+    }else{
+      st.tries=(st.tries||0)+1;
+      if(st.tries===1){
+        const h = (fillRec.hint && fillRec.hint.trim()) ? fillRec.hint : ans.slice(0, Math.max(2, Math.ceil(ans.length*0.3)));
+        byId('fillFeedback').textContent='تلميح: '+h+'…';
+      }else{
+        byId('fillFeedback').textContent='الإجابة: '+fillRec.word;
+        markResult(fillRec,'hard'); setTimeout(setupFill,800);
+      }
+    }
+  }
+});
+
 // Listen (auto-progress on correct)
 let listenRec=null;
 function setupListen(){ const s=currentPool(); if(!s.length) return; listenRec=s[Math.floor(Math.random()*s.length)]; byId('listenInput').value=''; byId('listenFeedback').textContent=''; }
@@ -164,8 +227,8 @@ byId('listenInput').addEventListener('keydown', e=>{ if(e.key==='Enter'){ const 
 function renderReview(){ const due=currentPool().filter(r=> new Date(ensureState(r).due)<=new Date()); const box=byId('reviewList'); box.innerHTML=''; if(!due.length){ box.textContent='لا يوجد مراجعة الآن'; return;} due.slice(0,60).forEach(r=>{ ensureState(r); const div=document.createElement('div'); div.className='card'; div.innerHTML=`<div style="font-weight:700">${r.word}</div><div class="muted" style="margin-top:6px">${r.meaning||'—'}</div><div style="margin-top:6px" class="pill">${r.level||''}</div>`; box.appendChild(div); }); }
   
 // Mode switch
-const sections=['flash','mcq','type','listen','review'].map(id=>byId(id));
-function setMode(m){ sections.forEach(s=>s.classList.add('hidden')); byId(m).classList.remove('hidden'); if(m==='mcq')setupMCQ(); if(m==='type')setupType(); if(m==='listen')setupListen(); if(m==='review')renderReview(); }
+const sections=['flash','mcq','type','fill','listen','review'].map(id=>byId(id));
+function setMode(m){ sections.forEach(s=>s.classList.add('hidden')); byId(m).classList.remove('hidden'); if(m==='mcq')setupMCQ(); if(m==='type')setupType(); if(m==='fill')setupFill(); if(m==='listen')setupListen(); if(m==='review')renderReview(); }
 
 // Install
 let deferredPrompt=null; window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredPrompt=e; byId('installBtn').disabled=false; });
@@ -174,8 +237,8 @@ byId('installBtn').onclick=async()=>{ if(!deferredPrompt) return; deferredPrompt
 function bind(){
   byId('resetBtn').onclick=()=>{ localStorage.removeItem(key); location.reload(); };
   byId('mode').addEventListener('change', e=> setMode(e.target.value));
-  byId('levelFilter').addEventListener('change', ()=>{ flashInit(); if(byId('mode').value==='mcq')setupMCQ(); if(byId('mode').value==='review')renderReview(); });
-  byId('reverse').addEventListener('change', ()=>{ flashInit(); if(byId('mode').value==='mcq')setupMCQ(); if(byId('mode').value==='type')setupType(); });
+  byId('levelFilter').addEventListener('change', ()=>{ flashInit(); if(byId('mode').value==='mcq')setupMCQ(); if(byId('mode').value==='type')setupType(); if(byId('mode').value==='fill')setupFill(); if(byId('mode').value==='review')renderReview(); });
+  byId('reverse').addEventListener('change', ()=>{ flashInit(); if(byId('mode').value==='mcq')setupMCQ(); if(byId('mode').value==='type')setupType(); if(byId('mode').value==='fill')setupFill(); });
   byId('showBtn').onclick=()=>{ byId('flashMeaning').style.filter='none'; };
   byId('nextBtn').onclick=()=>{ currentRec=nextFlash(); };
   byId('easyBtn').onclick=()=>{ if(currentRec) markResult(currentRec,'easy'); currentRec=nextFlash(); };
@@ -184,5 +247,5 @@ function bind(){
   byId('star').onclick=()=>{ const st=ensureState(currentRec); st.starred=!st.starred; byId('star').textContent=st.starred?'★':'☆'; save(); };
 }
 
-function init(){ rebuildData(); bind(); refreshStats(); setMode('type'); flashInit(); if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js'); }
+function init(){ rebuildData(); bind(); refreshStats(); setMode('fill'); flashInit(); if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js'); }
 </script></body></html>
