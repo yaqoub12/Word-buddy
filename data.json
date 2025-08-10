@@ -3,1428 +3,763 @@
     "word": "all right",
     "meaning": "good enough, although not very good",
     "example": "The party's all right, but the music's a bit boring.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "all"
   },
   {
     "word": "awful",
     "meaning": "very bad, of low quality, or unpleasant",
     "example": "We saw an awful film.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "awf"
   },
   {
     "word": "boring",
     "meaning": "not interesting or exciting",
     "example": "The party's alright, but the music's a bit boring.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "bor"
   },
   {
     "word": "delicious",
     "meaning": "If food or drink is delicious, it smells or tastes extremely good",
     "example": "The pizza is delicious.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "del"
   },
   {
     "word": "perfect",
     "meaning": "exactly right for someone or something",
     "example": "It's a perfect day for a party.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "per"
   },
   {
     "word": "strange",
     "meaning": "If something is strange, it is surprising because it is unusual or unexpected.",
     "example": "It's a really strange story.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "str"
   },
   {
     "word": "absolutely",
     "meaning": "completely",
     "example": "I absolutely hate rude people.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "abs"
   },
   {
     "word": "always",
     "meaning": "every time or all the time",
     "example": "I always have coffee with my breakfast.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "alw"
   },
   {
     "word": "especially",
     "meaning": "more than other things or people, or much more than usual",
     "example": "I love rock music, but I especially like the Rolling Stones.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "esp"
   },
   {
     "word": "fairly",
     "meaning": "more than average, but less than very",
     "example": "I think Facebook is fairly good.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "fai"
   },
   {
     "word": "generally",
     "meaning": "usually, or in most situations",
     "example": "I generally text my friends.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "gen"
   },
   {
     "word": "hardly ever",
     "meaning": "almost never",
     "example": "I hardly ever send postcards.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "har"
   },
   {
     "word": "mainly",
     "meaning": "mostly or to a large degree",
     "example": "I mainly see my family at weekends.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "mai"
   },
   {
     "word": "never",
     "meaning": "not at any time or not on any occasion",
     "example": "I have never been to Australia.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "nev"
   },
   {
     "word": "normally",
     "meaning": "usually",
     "example": "I normally enjoy horror films, but this one was awful!",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "nor"
   },
   {
     "word": "often",
     "meaning": "many times",
     "example": "I often get lost in big cities.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "oft"
   },
   {
     "word": "particularly",
     "meaning": "especially",
     "example": "I particularly enjoy getting letters.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "par"
   },
   {
     "word": "pretty",
     "meaning": "quite, but not extremely",
     "example": "I’m pretty sure my mum can’t use Skype.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "pre"
   },
   {
     "word": "rarely",
     "meaning": "not often",
     "example": "She rarely takes her family out for dinner - only when it's her birthday.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "rar"
   },
   {
     "word": "really",
     "meaning": "very or very much",
     "example": "I’m really into blogs.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "rea"
   },
   {
     "word": "sometimes",
     "meaning": "on some occasions but not always or often",
     "example": "I sometimes work from home.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "som"
   },
   {
     "word": "usually",
     "meaning": "in the way that most often happens",
     "example": "I usually go swimming on Saturdays.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "usu"
   },
   {
     "word": "by the way",
     "meaning": "used to introduce a new subject to be considered or to give further information",
     "example": "By the way, I'm going out later.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "by "
   },
   {
     "word": "these days",
     "meaning": "used to talk about the present time, in comparison with the past",
     "example": "Nothing is cheap these days.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "the"
   },
   {
     "word": "quite",
     "meaning": "a little or a lot but not completely",
     "example": "I thought the food was quite good.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "qui"
   },
   {
     "word": "amazing",
     "meaning": "very surprising",
     "example": "The room looks amazing",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "ama"
   },
   {
     "word": "gorgeous",
     "meaning": "very beautiful or pleasant",
     "example": "The fruit salad is gorgeous!",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "gor"
   },
   {
     "word": "horrible",
     "meaning": "very unpleasant or bad",
     "example": "The weather's horrible today.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "hor"
   },
   {
     "word": "lovely",
     "meaning": "pleasant or enjoyable",
     "example": "The weather's lovely today.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "lov"
   },
   {
     "word": "rude",
     "meaning": "behaving in a way which is not polite and upsets other people",
     "example": "It's very rude to arrive so late.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "rud"
   },
   {
     "word": "serious",
     "meaning": "A serious problem or situation is bad and makes people worry.",
     "example": "Perhaps he has a serious problem.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "ser"
   },
   {
     "word": "silly",
     "meaning": "stupid",
     "example": "What a silly game this is!",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "sil"
   },
   {
     "word": "ugly",
     "meaning": "unpleasant to look at",
     "example": "The carpet's a bit ugly.",
-    "level": "Units 1-3 U1"
+    "level": "Units 1-3 U1",
+    "hint": "ugl"
   },
   {
     "word": "suitcase",
     "meaning": "a rectangular case with a handle that you use for carrying clothes when you are travelling",
     "example": "We collected our suitcases from the arrivals hall.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "sui"
   },
   {
     "word": "sunglasses",
     "meaning": "dark glasses that you wear to protect your eyes from the sun.",
     "example": "He had short dark hair, a hat and sunglasses.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "sun"
   },
   {
     "word": "suntan lotion",
     "meaning": "a substance that protects your skin from the sun",
     "example": "Remember to wear suntan lotion on the ship.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "sun"
   },
   {
     "word": "bus",
     "meaning": "a large vehicle in which people are driven from one place to another",
     "example": "I took the bus to school.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "bus"
   },
   {
     "word": "car",
     "meaning": "a road vehicle for a small number of people",
     "example": "For long trips we go by car.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "car"
   },
   {
     "word": "coach",
     "meaning": "a long vehicle with comfortable seats, used to take groups of people on journeys",
     "example": "My parents have gone on a coach trip.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "coa"
   },
   {
     "word": "on foot",
     "meaning": "walking",
     "example": "I prefer to travel on foot where I can.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "on "
   },
   {
     "word": "plane",
     "meaning": "a vehicle designed for air travel, with wings and one or more engines",
     "example": "I will be travelling to Spain by plane.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "pla"
   },
   {
     "word": "train",
     "meaning": "a railway engine carrying people (in carriages) or goods (in containers)",
     "example": "My favourite way to travel is by train.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "tra"
   },
   {
     "word": "book accommodation",
     "meaning": "to arrange to stay in a place at some time in the future",
     "example": "We booked all of our accommodation online.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "boo"
   },
   {
     "word": "buy souvenirs",
     "meaning": "to buy presents or things you want to keep yourself from a place where you are on holiday",
     "example": "We bought souvenirs for our friends and family.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "buy"
   },
   {
     "word": "check into a hotel",
     "meaning": "to go to the desk at the front of a hotel to say that you have arrived",
     "example": "When we arrived, we checked into our luxury hotel and unpacked our luggage.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "che"
   },
   {
     "word": "check out of a hotel",
     "meaning": "to leave a hotel after paying your bill",
     "example": "The second week, we checked out of our hotel and stayed in a hostel.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "che"
   },
   {
     "word": "do some sightseeing",
     "meaning": "to visit places that are interesting because they are historical, famous, etc.",
     "example": "We did some sightseeing. The castles and gardens were gorgeous!",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "do "
   },
   {
     "word": "exchange some money",
     "meaning": "to buy money from one country with money from another country",
     "example": "We exchanged some money at the bank.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "exc"
   },
   {
     "word": "get a visa",
     "meaning": "to get an official mark in your passport that allows you to enter or leave a particular country",
     "example": "We needed to get a visa from the embassy before we travelled.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "get"
   },
   {
     "word": "go away on holiday",
     "meaning": "to go somewhere for a holiday",
     "example": "We went away on holiday for three weeks.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "go "
   },
   {
     "word": "have an adventure",
     "meaning": "to do something exciting",
     "example": "We had a great adventure and we didn’t want to come home.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "hav"
   },
   {
     "word": "stay in a hostel",
     "meaning": "to stay in a place like a cheap hotel, often with several people in the same room",
     "example": "The second week, we checked out of our hotel and stayed in a hostel.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "sta"
   },
   {
     "word": "stay on a campsite",
     "meaning": "to stay in an area where people can stay in tents for a holiday",
     "example": "The third week we stayed on a campsite by the beach.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "sta"
   },
   {
     "word": "unpack your luggage",
     "meaning": "to take your clothes and other things out of your suitcase",
     "example": "When we arrived, we checked into our luxury hotel and unpacked our luggage.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "unp"
   },
   {
     "word": "visa",
     "meaning": "an official mark in your passport that allows you to enter or leave a particular country",
     "example": "We needed to get a visa from the embassy before we travelled.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "vis"
   },
   {
     "word": "board a train",
     "meaning": "to get onto a train",
     "example": "We boarded a train to Paris.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "boa"
   },
   {
     "word": "break down",
     "meaning": "If a machine or vehicle breaks down, it stops working.",
     "example": "My car broke down on the motorway.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "bre"
   },
   {
     "word": "change",
     "meaning": "to get off a bus, plane, etc and catch another, in order to continue a journey",
     "example": "We changed at Strasbourg.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "cha"
   },
   {
     "word": "delay",
     "meaning": "when you have to wait longer than expected for something to happen, or the time that you have to wait",
     "example": "There was a delay at the station.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "del"
   },
   {
     "word": "get lost",
     "meaning": "to go somewhere and then not know where you are or where you should go",
     "example": "We got lost in the city centre.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "get"
   },
   {
     "word": "get to",
     "meaning": "to arrive in a place",
     "example": "We got to Paris at seven thirty.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "get"
   },
   {
     "word": "give sb a lift",
     "meaning": "to take someone somewhere in your car",
     "example": "A kind man gave us a lift to Frankfurt.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "giv"
   },
   {
     "word": "have a crash",
     "meaning": "to have an accident in which a vehicle hits something",
     "example": "I had a crash on the drive to work.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "hav"
   },
   {
     "word": "hitchhike",
     "meaning": "to get free rides in people's vehicles by standing next to the road and waiting for someone to pick you up",
     "example": "We hitchhiked across Germany.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "hit"
   },
   {
     "word": "land",
     "meaning": "If an aircraft lands, it arrives on the ground after a journey.",
     "example": "We landed on time in Berlin.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "lan"
   },
   {
     "word": "long queue",
     "meaning": "a long line of people waiting for something",
     "example": "There was a long queue at the ticket office.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "lon"
   },
   {
     "word": "miss a train",
     "meaning": "to arrive too late to get on a train",
     "example": "They missed their train.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "mis"
   },
   {
     "word": "set off",
     "meaning": "to start a journey",
     "example": "We set off in June.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "set"
   },
   {
     "word": "strike",
     "meaning": "a period of time when people are not working because they want more money, etc",
     "example": "There was a strike so there were no buses.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "str"
   },
   {
     "word": "take off",
     "meaning": "to leave the ground in an aeroplane",
     "example": "We took off late from London.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "tak"
   },
   {
     "word": "to be sth wrong with sth",
     "meaning": "If there is something wrong with a machine, it does not work in the way it should.",
     "example": "There was something wrong with the plane.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "to "
   },
   {
     "word": "traffic jam",
     "meaning": "a line of cars, trucks, etc that are moving slowly or not moving at all",
     "example": "The traffic jam went on for miles down the road.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "tra"
   },
   {
     "word": "travel around",
     "meaning": "to move around a place in a vehicle",
     "example": "We travelled around Europe last year.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "tra"
   },
   {
     "word": "turbulence",
     "meaning": "strong sudden movements in air or water",
     "example": "There was a lot of turbulence during the flight.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "tur"
   },
   {
     "word": "backpack",
     "meaning": "a bag that you carry on your back",
     "example": "I put a bottle of water in my backpack.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "bac"
   },
   {
     "word": "foreign currency",
     "meaning": "money from another country",
     "example": "You can get foreign currency at the bank.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "for"
   },
   {
     "word": "guidebook",
     "meaning": "a book that gives visitors information about a particular place",
     "example": "We were sitting outside a café, reading the guidebook.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "gui"
   },
   {
     "word": "map",
     "meaning": "a picture that shows where countries, towns, roads, rivers, etc are",
     "example": "The GPS wasn't working so we bought a map.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "map"
   },
   {
     "word": "passport",
     "meaning": "an official document, often a small book, that you need to enter or leave a country",
     "example": "You can get a new passport at the embassy.",
-    "level": "Units 1-3 U2"
+    "level": "Units 1-3 U2",
+    "hint": "pas"
   },
   {
     "word": "bank account",
     "meaning": "an arrangement with a bank to keep your money there and take it out when you need to",
     "example": "Brian only had £400 in his bank account.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "ban"
   },
   {
     "word": "bargain",
     "meaning": "something on sale at a lower price than its true value",
     "example": "I found this dress at a bargain price.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "bar"
   },
   {
     "word": "discount",
     "meaning": "a reduction in price",
     "example": "Brian asked the shop assistant for a discount but she said no.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "dis"
   },
   {
     "word": "pay sth back",
     "meaning": "to pay someone the money that you owe them",
     "example": "Carol paid back the £700 pounds.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "pay"
   },
   {
     "word": "sale",
     "meaning": "an occasion when goods are sold at a lower price than usual",
     "example": "I bought a shirt in the sale last week.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "sal"
   },
   {
     "word": "special offer",
     "meaning": "a price that is lower than usual",
     "example": "When Brian got home he found a special offer online.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "spe"
   },
   {
     "word": "the sales",
     "meaning": "a time when shops sell goods at a lower price than usual",
     "example": "One day Carol and Fay went shopping in the sales.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "the"
   },
   {
     "word": "do sth nice",
     "meaning": "to do something kind",
     "example": "That was the nicest thing a stranger has ever done for me.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "do "
   },
   {
     "word": "do volunteer work",
     "meaning": "to do work that you are not paid for",
     "example": "I have been to Haiti three times to do volunteer work.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "do "
   },
   {
     "word": "do well",
     "meaning": "to be successful",
     "example": "The boy is doing really well at school.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "do "
   },
   {
     "word": "give someone a hug",
     "meaning": "to put your arms around someone",
     "example": "You should give someone who looks sad a hug.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "giv"
   },
   {
     "word": "give someone a tip",
     "meaning": "to give an extra amount of money to someone like a waiter or a taxi driver",
     "example": "I gave the waitress a big tip.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "giv"
   },
   {
     "word": "give sb advice",
     "meaning": "offer someone an opinion about what they should do or how they should act",
     "example": "He gave me some advice which really helped me.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "giv"
   },
   {
     "word": "give someone directions",
     "meaning": "to tell someone how to get to a place",
     "example": "I often give people directions.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "giv"
   },
   {
     "word": "give sth away",
     "meaning": "to give something to someone without asking for any money",
     "example": "I give away my old clothes to charity.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "giv"
   },
   {
     "word": "make a friend",
     "meaning": "to become friendly with someone",
     "example": "A few weeks ago, I made a new friend.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "mak"
   },
   {
     "word": "make a joke",
     "meaning": "to say something that is funny",
     "example": "I try to make a joke when people are bored.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "mak"
   },
   {
     "word": "make a note",
     "meaning": "to write something down or remember it carefully",
     "example": "She made a note of what they'd agreed.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "mak"
   },
   {
     "word": "make someone smile",
     "meaning": "to make someone's mouth curve up because they are happy",
     "example": "I bought everyone drinks and made them smile.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "mak"
   },
   {
     "word": "card",
     "meaning": "a small, rectangular piece of card or plastic, used to prove your identity or make purchases",
     "example": "I'd like to pay by card, please.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "car"
   },
   {
     "word": "receipt",
     "meaning": "a piece of paper or message proving that money, goods, or information have been received",
     "example": "Would you like your receipt?",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "rec"
   },
   {
     "word": "afford",
     "meaning": "to have enough money to buy something",
     "example": "Brian couldn’t afford the camera.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "aff"
   },
   {
     "word": "borrow",
     "meaning": "to use something that belongs to someone else and give it back later",
     "example": "Fay offered to lend Carol some money, so she borrowed £100.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "bor"
   },
   {
     "word": "cash",
     "meaning": "money in any form",
     "example": "Carol saw some shoes she loved, but she didn’t have any cash.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "cas"
   },
   {
     "word": "cost",
     "meaning": "If something costs a particular amount of money, you have to pay that in order to buy or do it.",
     "example": "Brian saw a great camera but it cost £499.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "cos"
   },
   {
     "word": "get a loan",
     "meaning": "to borrow money from a bank",
     "example": "Carol got a loan for £1000 from the bank.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "get"
   },
   {
     "word": "lend",
     "meaning": "to give something to someone for a period of time, expecting that they will then give it back to you",
     "example": "Fay offered to lend Carol some money, so she borrowed £100.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "len"
   },
   {
     "word": "owe",
     "meaning": "to have to pay money back to someone",
     "example": "Carol owed Fay £700.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "owe"
   },
   {
     "word": "save up for sth",
     "meaning": "to keep money so that you can buy something with it in the future",
     "example": "Brian was saving up for a camera.",
-    "level": "Units 1-3 U3"
+    "level": "Units 1-3 U3",
+    "hint": "sav"
   },
   {
     "word": "spend (money) on sth",
     "meaning": "to use money to buy or pay for something",
     "example": "Carol spent a lot of money on shoes.",
-    "level": "Units 1-3 U3"
-  },
-  {
-    "word": "ancient",
-    "meaning": "from a long time ago",
-    "example": "Stonehenge is an ancient monument in Wiltshire in England.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "crowded",
-    "meaning": "very full of people",
-    "example": "The palace is nice but it’s so crowded.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "empty",
-    "meaning": "not containing any things or people",
-    "example": "The park is empty at that time of day.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "high",
-    "meaning": "having a large distance from the bottom to the top",
-    "example": "The hills in the South of England are quite high.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "huge",
-    "meaning": "extremely large",
-    "example": "It’s a huge park so it’s always really nice.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "indoor",
-    "meaning": "happening, used, or existing in a building",
-    "example": "I’ve arranged to meet my friend at an indoor shopping mall in Santa Monica.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "low",
-    "meaning": "near the ground, not high",
-    "example": "The hills here are quite low.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "magnificent",
-    "meaning": "very good or very beautiful",
-    "example": "The city has some magnificent buildings.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "modern",
-    "meaning": "using the newest ideas, design, technology, etc and not traditional",
-    "example": "This street has a lot of cool, modern buildings.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "narrow",
-    "meaning": "Narrow things measure a small distance from one side to the other.",
-    "example": "The streets in the old part of town are very narrow.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "noisy",
-    "meaning": "Noisy people or things make a lot of noise.",
-    "example": "The theatre is crowded and noisy.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "ordinary",
-    "meaning": "not special, different, or unusual in any way",
-    "example": "We’ve stopped for lunch at an ordinary LA diner.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "outdoor",
-    "meaning": "happening, used, or in a place that is outside and not inside a building",
-    "example": "We’ve decided to celebrate with coffee and cake at my favourite outdoor café near the beach.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "peaceful",
-    "meaning": "quiet and calm",
-    "example": "I love this time of the day as it’s so peaceful and quiet down on Venice Beach.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "pretty",
-    "meaning": "If a place or an object is pretty, it is pleasant to look at.",
-    "example": "Everyone goes to look at the pretty flowers.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "quiet",
-    "meaning": "without much noise or activity",
-    "example": "I love this time of the day as it’s so peaceful and quiet down on Venice Beach.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "tiny",
-    "meaning": "extremely small",
-    "example": "He lives in a tiny house.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "ugly",
-    "meaning": "unpleasant to look at",
-    "example": "The new building opposite the university is ugly.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "wide",
-    "meaning": "measuring a long distance or longer than usual from one side to the other",
-    "example": "This road isn't wide enough for a bus.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "belt",
-    "meaning": "a long, thin piece of leather, cloth, or plastic that you wear around your waist",
-    "example": "He wore brown trousers with a red belt.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "boot",
-    "meaning": "a shoe that covers your foot and part of your leg",
-    "example": "I bought my boots from the new shoe shop opposite the café.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "flat shoes",
-    "meaning": "shoes with very low heels",
-    "example": "Bring flat shoes for walking around town.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "get a new outfit",
-    "meaning": "to buy a new set of clothes",
-    "example": "I’m going to go shopping and get a new outfit.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "glove",
-    "meaning": "a piece of clothing which covers your fingers and hand",
-    "example": "It was a really cold day, so she decided to put on her scarf and gloves.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "go to the beautician's",
-    "meaning": "to go to a place where you can have your skin, hair, nails, etc. treated to make you look better",
-    "example": "She has very long nails so she often goes to the beautician's.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "go to the hairdresser's",
-    "meaning": "to go to a place where you can have your hair washed, cut, coloured etc",
-    "example": "I need a haircut so I’m going to the hairdresser's this afternoon.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "handbag",
-    "meaning": "a bag carried by a woman with her money, keys, etc inside",
-    "example": "The old lady lost her handbag in the park.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "have a shave",
-    "meaning": "to cut the hair off your face and chin",
-    "example": "He should have a shave before he grows a beard.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "jumper",
-    "meaning": "a warm piece of clothing which covers the top of your body and is pulled on over your head",
-    "example": "You will need a jumper in the evenings.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "look your best",
-    "meaning": "to look as attractive as possible",
-    "example": "I want to look my best because all my family is coming.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "necklace",
-    "meaning": "a piece of jewellery that you wear around your neck",
-    "example": "Shall I wear the gold bracelet and necklace or the black one?",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "raincoat",
-    "meaning": "a coat that you wear when it is raining",
-    "example": "It's very cloudy - I'll take my raincoat.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "shorts",
-    "meaning": "a very short pair of trousers that stop above the knee",
-    "example": "She is wearing shorts and sandals.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "socks",
-    "meaning": "something that you wear on your foot inside your shoe",
-    "example": "We wear long blue socks for school.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "suit",
-    "meaning": "a jacket and trousers or a jacket and skirt that are made from the same material",
-    "example": "Giles is going to buy himself a new suit.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "trainers",
-    "meaning": "soft sports shoes",
-    "example": "She wears trainers for running.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "underwear",
-    "meaning": "the clothes that you wear next to your skin, under your other clothes",
-    "example": "Make sure you take clean underwear.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "wear sth nice",
-    "meaning": "to wear attractive clothes",
-    "example": "It’s an expensive restaurant so please wear something nice.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "bracelet",
-    "meaning": "a piece of jewellery that you wear around your wrist",
-    "example": "Shall I wear the gold bracelet and necklace or the black one?",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "earring",
-    "meaning": "a piece of jewellery that you wear on your ear",
-    "example": "How about these earrings? They’re really beautiful.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "high heels",
-    "meaning": "shoes with high parts under the back part of your foot",
-    "example": "I’ve found a gorgeous red dress and matching high heels.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "sandals",
-    "meaning": "light shoes with straps that you wear in warm weather",
-    "example": "She is wearing shorts and sandals.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "scarf",
-    "meaning": "a piece of cloth that you wear around your neck, head, or shoulders to keep warm or for decoration",
-    "example": "It was a really cold day, so she decided to put on her scarf and gloves.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "sweatshirt",
-    "meaning": "a piece of clothing made of soft cotton which covers the top of your body and is pulled on over your head",
-    "example": "He wore jeans and a sweatshirt.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "tie",
-    "meaning": "a long, thin piece of cloth that a man wears around his neck with a shirt",
-    "example": "He always wears a tie when he goes for a job interview.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "tights",
-    "meaning": "a piece of women's clothing made of very thin material that covers the legs and bottom",
-    "example": "I wore a skirt and black tights.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "top",
-    "meaning": "a piece of women's clothing worn on the upper part of the body",
-    "example": "I need a top to wear with this skirt.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "tracksuit",
-    "meaning": "loose, comfortable clothes, usually trousers and a top, especially worn for exercising",
-    "example": "I’m going to put my tracksuit on and go for a run.",
-    "level": "Units 4-6 U4"
-  },
-  {
-    "word": "designer",
-    "meaning": "someone who draws and plans how something will be made",
-    "example": "I work for a number of companies as a book designer.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "actor",
-    "meaning": "someone, especially a man, whose job is to perform in plays and films",
-    "example": "We will still need actors and musicians to entertain us.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "bank clerk",
-    "meaning": "an employee of a bank who deals with customers, receives and pays out money, etc.",
-    "example": "My friend works as a bank clerk in the city.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "builder",
-    "meaning": "someone who makes or repairs buildings as a job",
-    "example": "Someone suggested I train to be a builder.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "carer",
-    "meaning": "someone who looks after a person who is young, old, or ill",
-    "example": "We’ll need carers to look after us in old age.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "computer programmer",
-    "meaning": "someone whose job is to write instructions for computers",
-    "example": "My sister is a computer programmer.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "engineer",
-    "meaning": "a person whose job is to  design, build, repair or control machines, engines, or electrical equipment",
-    "example": "She has a job as a software engineer.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "lawyer",
-    "meaning": "someone whose job is to understand the law and deal with legal situations",
-    "example": "We need lawyers to argue for us.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "musician",
-    "meaning": "someone who plays a musical instrument, often as a job",
-    "example": "We will still need actors and musicians to entertain us.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "politician",
-    "meaning": "someone who works in politics, especially a member of the government",
-    "example": "We need politicians to make the big decisions for us.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "postman",
-    "meaning": "a man who takes and brings letters and parcels as a job",
-    "example": "Some postmen might lose their jobs, because people will send everything by email in the future.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "shop assistant",
-    "meaning": "someone whose job is selling things in a shop",
-    "example": "There won't be many jobs for shop assistants because more people will shop online.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "specialist",
-    "meaning": "someone who has a lot of experience, knowledge, or skill in a particular subject",
-    "example": "I think this issue needs a specialist.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "taxi driver",
-    "meaning": "a person who drives a taxi as a job",
-    "example": "The taxi driver who took us to the airport was very sociable.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "don't worry",
-    "meaning": "used to tell someone not to worry",
-    "example": "Don't worry if you're too busy to come.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "it doesn't matter",
-    "meaning": "used to say that something isn't important, or won't affect what happens",
-    "example": "It doesn't matter if we're late because we haven't booked for a certain time.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "never mind",
-    "meaning": "used to tell someone not to worry about something because it is not important",
-    "example": "Oh, never mind about missing dinner, it wasn't that important.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "no problem",
-    "meaning": "said to show that you will or can do what someone has asked you to",
-    "example": "I can do that for you, no problem.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "actress",
-    "meaning": "a woman whose job is to perform in plays and films",
-    "example": "She's a TV actress.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "architect",
-    "meaning": "someone who designs buildings",
-    "example": "I decided to study to become an architect.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "banker",
-    "meaning": "someone who has an important job in a bank",
-    "example": "Bankers often earn a lot of money.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "be self-employed",
-    "meaning": "to work for yourself not for a company",
-    "example": "I’m self-employed, which means I work on my own and not in a team.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "deal with people every day",
-    "meaning": "to meet and talk to people every day as part of your job",
-    "example": "I'm a shop assistant, so I deal with people every day.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "deal with serious problems",
-    "meaning": "to take action to solve important problems",
-    "example": "The engineers sometimes have to deal with serious problems.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "earn a good salary",
-    "meaning": "to get a lot of money from your job",
-    "example": "When I’m busy I can earn a very good salary.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "electrician",
-    "meaning": "someone whose job is to put in, check, or repair electrical wires and equipment",
-    "example": "We need an electrician to fix the lights.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "gardener",
-    "meaning": "someone who works in a garden, growing plants and making it look attractive",
-    "example": "My grandparents have a gardener now.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "have a lot of skills",
-    "meaning": "to be good at doing a lot of things",
-    "example": "Doctors need to have a lot of skills.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "have a nice working environment",
-    "meaning": "to work in a place that is pleasant",
-    "example": "I can work at home, so I can say that I have a really nice working environment!",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "make important decisions",
-    "meaning": "to decide about things that are important",
-    "example": "Managers have to make important decisions for the company.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "need good qualifications",
-    "meaning": "If you need good qualifications to do a job, you must pass a lot of exams.",
-    "example": "You need good qualifications to be a lawyer.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "need several years of training",
-    "meaning": "If a job needs several years of training, you have to learn it for several years before you can do it well.",
-    "example": "You need several years of training to be a vet.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "plumber",
-    "meaning": "someone whose job is to repair or connect water pipes and things like toilets and baths",
-    "example": "The plumber came to fix the sink.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "postwoman",
-    "meaning": "a female postman",
-    "example": "The postwoman comes early in the morning.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "scientist",
-    "meaning": "someone who studies science or works in science",
-    "example": "Tim Berners-Lee was the scientist who invented the World Wide Web.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "work in a team",
-    "meaning": "to work together with a group of people",
-    "example": "I’ve always liked working in a team.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "work long hours",
-    "meaning": "to work for a long time every day",
-    "example": "When I’m very busy I have to work long hours.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "work weekends",
-    "meaning": "to work on Saturday and Sunday",
-    "example": "I sometimes have to work weekends.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "accountant",
-    "meaning": "someone whose job is to keep or examine the financial records of a company or organization",
-    "example": "My father's an accountant.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "hairdresser",
-    "meaning": "someone whose job is to wash, cut, colour, etc people's hair",
-    "example": "I'm a hairdresser and I work in a very fashionable salon.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "IT worker",
-    "meaning": "someone who works with computers and other electronic equipment",
-    "example": "Are you an IT worker?",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "journalist",
-    "meaning": "someone whose job is to write articles for newspapers and magazines",
-    "example": "Martin Lewis is a British journalist, TV presenter and writer.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "vet",
-    "meaning": "someone whose job is to give medical care to animals that are ill or hurt",
-    "example": "When I was little, I wanted to be a vet because I loved looking after animals.",
-    "level": "Units 4-6 U5"
-  },
-  {
-    "word": "arrive at (a place)",
-    "meaning": "to get to a place",
-    "example": "We arrived at the check-in desk after the plane had left.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "ask about sth",
-    "meaning": "to say something to someone as a question",
-    "example": "Who can you ask about problems at school or work?",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "ask sb for sth",
-    "meaning": "to say to someone that you want them to give you something or do something for you",
-    "example": "You should ask for a few days off.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "borrow sth from sb",
-    "meaning": "to use something that belongs to someone else and give it back later",
-    "example": "Don’t borrow money from friends because it causes problems.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "concentrate on sth",
-    "meaning": "to think very carefully about something you are doing and nothing else",
-    "example": "What stops you concentrating on your work?",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "deal with sth",
-    "meaning": "to take action in order to achieve something or solve a problem",
-    "example": "What is a problem you have to deal with every day?",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "listen to sth",
-    "meaning": "to give attention to something in order to hear them",
-    "example": "Do you listen to music while you clean?",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "look at sth",
-    "meaning": "to turn your eyes in the direction of something so that you can see it",
-    "example": "How often do you look at your phone?",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "pay for sth",
-    "meaning": "to give money to someone in order to buy something from them",
-    "example": "He paid for his friend's meal.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "spend sth on sth",
-    "meaning": "to use money to buy or pay for something",
-    "example": "Only spend money on things you really need.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "talk to sb",
-    "meaning": "to say things to someone",
-    "example": "Talk to a doctor about how you feel.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "think about sth",
-    "meaning": "to use your mind to imagine a situation",
-    "example": "Do you think about your work at weekends?",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "think of sth",
-    "meaning": "to use your mind to produce an idea or a solution",
-    "example": "You should think of ways to save energy.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "wait for",
-    "meaning": "to not do something until something else happens",
-    "example": "You should wait for the sales to buy expensive things.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "relaxed",
-    "meaning": "feeling happy and comfortable because nothing is worrying you",
-    "example": "Customers should feel relaxed and get excellent service.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "relaxing",
-    "meaning": "making you feel relaxed",
-    "example": "We spend a lot of our time in the swimming pool - it's so relaxing!",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "amazed",
-    "meaning": "extremely surprised",
-    "example": "Everyone was amazed by the fireworks.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "amazing",
-    "meaning": "very good",
-    "example": "The fireworks looked amazing.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "annoyed",
-    "meaning": "slightly angry",
-    "example": "Magda was annoyed by the music from the neighbour’s flat.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "annoying",
-    "meaning": "making you feel annoyed",
-    "example": "The music from the neighbour’s flat was really annoying.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "confused",
-    "meaning": "unable to think clearly or to understand something",
-    "example": "Andreas was very confused by the road signs.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "confusing",
-    "meaning": "difficult to understand",
-    "example": "The road signs were really confusing.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "disappointed",
-    "meaning": "unhappy because someone or something was not as good as you hoped or expected, or because something did not happen",
-    "example": "Will was very disappointed by his present.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "disappointing",
-    "meaning": "making you feel disappointed",
-    "example": "Will’s birthday present was very disappointing.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "embarrassed",
-    "meaning": "feeling ashamed or shy",
-    "example": "Liza was embarrassed by her boyfriend’s dancing.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "embarrassing",
-    "meaning": "making you feel embarrassed",
-    "example": "Liza’s boyfriend’s dancing was embarrassing.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "excited",
-    "meaning": "feeling very happy and enthusiastic",
-    "example": "It’s my first time at a premiere so I’m so excited.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "exciting",
-    "meaning": "making you feel very happy and enthusiastic",
-    "example": "The football match was very exciting.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "frightened",
-    "meaning": "afraid or nervous",
-    "example": "Mehmet was frightened of the animals.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "frightening",
-    "meaning": "making you feel afraid or nervous",
-    "example": "Mehmet thought the animals were frightening.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "interested",
-    "meaning": "wanting to give your attention to something and discover more about it",
-    "example": "Tracy isn’t very interested in computer games.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "interesting",
-    "meaning": "Someone or something that is interesting keeps your attention because they are unusual, exciting, or have lots of ideas.",
-    "example": "It was interesting to learn about sharks.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "shocked",
-    "meaning": "very surprised and upset",
-    "example": "They were shocked when they got the bill for the meal.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "shocking",
-    "meaning": "very surprising and upsetting",
-    "example": "Their behaviour was very shocking.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "surprised",
-    "meaning": "feeling surprise because something has happened that you did not expect",
-    "example": "Anita was surprised to get the news from her sister.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "surprising",
-    "meaning": "not expected and making someone feel surprised",
-    "example": "Anita got some surprising news from her sister.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "tired",
-    "meaning": "feeling that you want to rest or sleep",
-    "example": "Sara was tired after a long day at work.",
-    "level": "Units 4-6 U6"
-  },
-  {
-    "word": "tiring",
-    "meaning": "making you feel tired",
-    "example": "Sara had a really tiring day at work.",
-    "level": "Units 4-6 U6"
+    "level": "Units 1-3 U3",
+    "hint": "spe"
   }
 ]
